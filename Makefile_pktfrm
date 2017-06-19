@@ -1,0 +1,25 @@
+CC = gcc
+
+OFILES = pktfrm.o
+#	sever.o
+
+CFILECLT = packet_frame.c
+
+#CFILESRV = server.c
+
+#EXESRV = server
+
+EXECLT = pktfrm
+
+but : ${EXECLT}
+
+${EXECLT} :
+	$(CC) $(CFLAGS) -o ${EXECLT} ${CFILECLT}
+
+clean :
+	-rm -f ${OFILES} ${EXECLT} *~
+                 
+mrproper : clean but
+
+.PHONY : but clean mrproper
+
